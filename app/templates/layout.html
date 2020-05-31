@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.2.min.js"
+        crossorigin="anonymous"></script>
+	<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.2.min.js"
+        crossorigin="anonymous"></script>
+	<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.0.2.min.js"
+        crossorigin="anonymous"></script>
+	
+	
+    {{ resources }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Skeleton application demoing Heroku and Flask integration.">
+    <meta name="author" content="@gotoariel">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+
+    <title>This is a simple app to look up stock prices.</title>
+
+    <!-- Bootstrap core CSS -->
+    
+  
+	<style>
+    body {
+      padding-top: 70px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="col-lg-12 text-left">
+          <h1>Stock price viewer</h1>
+		  <a target="_blank" href="https://github.com/sbuergers/stock-price-web-app">Github</a> &emsp;
+		  <a target="_blank" href="https://www.kiplinger.com/tfn/ticker.html">Ticker symbols</a> &emsp;
+		    <div class="topnav">
+			  <br>
+			    Enter ticker symbol
+			  <br>
+				  <form action="/search" method="POST">
+					<input name="search" placeholder="aapl">
+					<input type="submit" value="Search">
+				  </form>
+		    </div>
+		  <br>
+		  <br>
+		    {% block body %}{% endblock %}
+	<!--	  <div id="time series"></div>
+		  <script>
+		    fetch('/plot')
+		      .then(function(response) { return response.json(); })
+		      .then(function(item) { return Bokeh.embed.embed_item(item); })
+		  </script> 
+     -->
+		</div>
+    </div>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+  </body>
+</html>

@@ -13,7 +13,7 @@ from alpha_vantage.timeseries import TimeSeries
 # Data visualization
 import bokeh
 from bokeh.plotting import figure, show, output_file
-from bokeh.models import HoverTool, ColumnDataSource,
+from bokeh.models import HoverTool, ColumnDataSource
 
 # Date-time handling
 import datetime
@@ -30,7 +30,7 @@ ylabel = 'Price (closing)'
 xlabel = 'Date'
 
 ## Get stock data
-key = os.environ("ALPHA_VANTAGE_KEY")
+key = os.environ["ALPHA_VANTAGE_KEY"]
 ts = TimeSeries(key)
 data, meta = ts.get_daily(symbol=stock_id)
 print(data['2020-01-07'])
@@ -60,7 +60,7 @@ p.line('date', 'close', source=source)
 p.xaxis.axis_label = xlabel
 p.yaxis.axis_label = ylabel
 
-HoverTool(
+hover = HoverTool(
     tooltips=[
         ('date', '@date{%F}'),
         ('close', '@close{$%0.2f}'), 
@@ -74,13 +74,8 @@ HoverTool(
 )
 
 p.add_tools(hover)
-output_file("time_series.html")
+#output_file("time_series.html")
 show(p)
-
-
-
-
-
 
 
 # eof
