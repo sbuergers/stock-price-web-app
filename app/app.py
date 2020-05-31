@@ -99,11 +99,11 @@ def search_stock():
 				plots.append(plot(stock))
 				return render_template('index.html', plots=plots)
 			except:
-				return render_template('limitreached.html')
+				return render_template('notfound.html')
 		else:
 			return render_template('notfound.html')
 	else:
-		redirect('/')
+		return redirect('/')
 
 
 if __name__ == '__main__':
