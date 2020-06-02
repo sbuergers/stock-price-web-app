@@ -5,13 +5,11 @@ import os
 
 # Data handling
 import pandas as pd
-import json
 
 # Stock data API
 from alpha_vantage.timeseries import TimeSeries
 
 # Data visualization
-import bokeh
 from bokeh.embed import components
 from bokeh.plotting import figure
 from bokeh.models import HoverTool, ColumnDataSource
